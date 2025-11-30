@@ -1,0 +1,22 @@
+[
+
+    {
+        source_relative_url : "JahedulKaderForman/End-to-End-E-Commerce-Data-Engineering-Project-Azure-/refs/heads/main/Dataset/customers.csv",
+        sink_file_name : "customers.csv"
+    },
+    {
+        source_relative_url : "JahedulKaderForman/End-to-End-E-Commerce-Data-Engineering-Project-Azure-/refs/heads/main/Dataset/order_items.csv",
+        sink_file_name : "order_items.csv"
+
+    },
+    {
+        source_relative_url : "JahedulKaderForman/End-to-End-E-Commerce-Data-Engineering-Project-Azure-/refs/heads/main/Dataset/orders.csv",
+        sink_file_name : "orders.csv"
+
+    },
+    {
+        source_relative_url : "JahedulKaderForman/End-to-End-E-Commerce-Data-Engineering-Project-Azure-/blob/main/Dataset/products.csv",
+        sink_file_name : "products.csv"
+
+    }
+]
