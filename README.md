@@ -8,12 +8,12 @@ This project showcases my end-to-end cloud data engineering work using the Azure
 
 1. [Project Overview](#-project-overview)  
 2. [Architecture](#%EF%B8%8F-architecture)  
-3. [Tech Stack](#tech-stack)  
-4. [Dataset](#dataset)  
-5. [Data Lake Structure](#data-lake-structure)  
-6. [Data Modeling](#data-modeling)  
-7. [Transformation Pipeline](#transformation-pipeline)  
-8. [Power BI Dashboard](#power-bi-dashboard)
+3. [Tech Stack](#%EF%B8%8F-tech-stack)  
+4. [Dataset](#-dataset)  
+5. [Data Lake Structure](#-data-lake-structure-medallion-architecture)  
+6. [Data Modeling](#-data-modeling)  
+7. [Transformation Pipeline](#%EF%B8%8F-transformation-pipeline)  
+8. [Power BI Dashboard](#-power-bi-dashboard)
    
 ---
 
