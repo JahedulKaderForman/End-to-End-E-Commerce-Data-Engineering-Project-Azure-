@@ -1,0 +1,57 @@
+CREATE EXTERNAL TABLE dbo.dim_product
+(
+    product_key INT,
+    product_name NVARCHAR(100),
+    category NVARCHAR(50),
+    unit_price FLOAT
+)
+WITH (
+    LOCATION = '/dim_product/',
+    DATA_SOURCE = ecommerce_gold,
+    FILE_FORMAT = ParquetFormat
+);
+
+
+
+CREATE EXTERNAL TABLE dbo.dim_date
+(
+    date_key INT,
+    date DATE,
+    day INT,
+    month INT,
+    year INT,
+    weekday NVARCHAR(10)
+)
+WITH (
+    LOCATION = '/dim_date/',
+    DATA_SOURCE = ecommerce_gold,
+    FILE_FORMAT = ParquetFormat
+);
+
+
+
+CREATE EXTERNAL TABLE dbo.fact_order
+(
+    order_item_key INT,
+    order_id INT,
+    order_date_key INT,
+    customer_key INT,
+    product_key INT,
+    quantity INT,
+    unit_price FLOAT,
+    discount FLOAT,
+    total_price FLOAT,
+    order_status NVARCHAR(20)
+)
+WITH (
+    LOCATION = '/fact_order/',
+    DATA_SOURCE = ecommerce_gold,
+    FILE_FORMAT = ParquetFormat
+);
+
+
+
+
+SELECT TOP 20 * FROM dbo.fact_order;
+SELECT COUNT(*) FROM dbo.dim_customer;
+SELECT SUM(total_price) AS total_sales FROM dbo.fact_order;

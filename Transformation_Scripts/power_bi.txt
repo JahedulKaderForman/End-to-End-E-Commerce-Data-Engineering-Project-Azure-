@@ -1,0 +1,56 @@
+E-Commerce Sales & Analytics Dashboard 
+
+Measure :
+
+Total Sales = SUM(fact_order[total_price])
+
+Total Orders = DISTINCTCOUNT(fact_order[order_id])
+
+Total Customers = DISTINCTCOUNT(fact_order[customer_key])
+
+Average Order Value = DIVIDE([Total Sales], [Total Orders])
+
+
+KPI Cards :
+ Total Sales
+ Total Orders
+ Total Customers
+ Average Order Value
+
+
+Sales Trend Over Time (Line chart) :
+  dim_date[date] → X-axis
+  Total Sales → Y-axis
+
+
+Revenue by Product Category (Clustered column chart ) :
+  Total Sales  → X-axis
+  dim_product[category] → Y-axis
+
+
+
+Top Products (Bar chart) :
+ dim_product[product_name] → Y-axis
+ Total Sales → X-axis
+
+
+
+Customers by Country (Stacked column chart or a Map) :
+dim_customer[country] → Axis / Location
+Total Sales or Total Orders → Values
+
+
+Orders by Order Status (PIE CHART) :
+fact_order[order_status]  -> Legend
+Total Orders ->  Values
+
+
+Sales by Month  ( DONUT CHART ) :
+dim_date[month] -> Legend
+Total Sales -> Values
+
+
+Add Slicers (Filters) :
+slicer: dim_product[category]
+Another : dim_customer[country]
+

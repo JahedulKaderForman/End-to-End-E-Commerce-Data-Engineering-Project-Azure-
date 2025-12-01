@@ -1,0 +1,18 @@
+CREATE MASTER KEY  ENCRYPTION BY PASSWORD ='Ecom2024!@' 
+
+CREATE DATABASE SCOPED CREDENTIAL cred_ecom
+WITH IDENTITY = 'Managed Identity'
+  
+
+CREATE EXTERNAL DATA SOURCE ecommerce_gold
+WITH (
+    LOCATION = 'https://datalakeecomproject.dfs.core.windows.net/gold'
+    CREDENTIAL = cred_ecom
+);
+
+
+CREATE EXTERNAL FILE FORMAT ParquetFormat
+WITH (
+    FORMAT_TYPE = PARQUET
+);
+
