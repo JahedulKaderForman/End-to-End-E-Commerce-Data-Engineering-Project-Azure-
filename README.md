@@ -39,8 +39,8 @@ This project is designed to showcase **real-world data engineering skills** used
 
 Below is the high-level architecture of the solution:
 
-📌 **Replace with your diagram later:**  
-`![Architecture Diagram](images/architecture.png)`
+<img width="1148" height="527" alt="architecture_e_com" src="https://github.com/user-attachments/assets/a4a3140d-8611-47d5-923e-db039bf85e1f" />
+
 
 ### Architecture Flow
 
