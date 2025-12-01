@@ -6,7 +6,7 @@ This project showcases my end-to-end cloud data engineering work using the Azure
 
 ## 📘 Table of Contents
 
-1. [Project Overview](#project-overview)  
+1. [Project Overview](#-project-overview)  
 2. [Architecture](#architecture)  
 3. [Tech Stack](#tech-stack)  
 4. [Dataset](#dataset)  
