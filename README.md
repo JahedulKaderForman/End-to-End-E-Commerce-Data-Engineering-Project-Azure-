@@ -55,6 +55,7 @@ Below is the high-level architecture of the solution:
 |-------|------------|
 | Ingestion | Azure Data Factory |
 | Storage | Azure Data Lake Gen2 |
+| Security / Secrets | Azure Key Vault |
 | Processing | Azure Databricks (PySpark) |
 | Warehouse | Azure Synapse Analytics |
 | Visualization | Power BI |
@@ -83,15 +84,10 @@ This data includes customer info, product catalog, order headers, and order item
 
 
 
-
 ---
 
 # 🧠 Data Modeling
-
-<img width="1006" height="725" alt="data_modeling" src="https://github.com/user-attachments/assets/7dcc59a3-c253-474e-9ef4-83477c592b94" />
-
-
-The project uses a **Star Schema**:
+I designed the analytical model using a **Star Schema**, which includes three dimension tables—dim_customer, dim_product, and dim_date—and a single fact_order table .
 
 ### ⭐ Dimensions
 - `dim_customer`
@@ -100,6 +96,10 @@ The project uses a **Star Schema**:
 
 ### ⭐ Fact Table
 - `fact_order` (one row per order item)
+  
+<img width="1006" height="725" alt="data_modeling" src="https://github.com/user-attachments/assets/7dcc59a3-c253-474e-9ef4-83477c592b94" />
+
+
 
 ---
 
@@ -117,19 +117,26 @@ Inside Databricks, I implemented:
 
 
 ### 🔹 Bronze Layer  
-Raw CSV files ingested from ADF.
+My source data consists of raw CSV files (customers, products, orders, order_items). I used Azure Data Factory to pull these files into the Bronze layer of my Data Lake.
 
 <img width="1455" height="635" alt="adf" src="https://github.com/user-attachments/assets/b0ceaccf-4db4-4646-97d5-76714568de22" />
 
 
 
 ### 🔹 Silver Layer  
+
 Cleaned + standardized:
 - Fixed data types  
 - Removed duplicates  
 - Derived fields
 
 <img width="1802" height="783" alt="databricks_2" src="https://github.com/user-attachments/assets/84ee2981-ebc3-4075-a713-df1318ca0a61" />
+
+<img width="1685" height="697" alt="databricks_6" src="https://github.com/user-attachments/assets/c503403f-17ef-4394-915b-8b6ba5cf04c0" />
+
+
+Azure Key Vault : 
+<img width="1488" height="507" alt="key_vault" src="https://github.com/user-attachments/assets/7ee116d5-aeaf-4501-a50f-9efbe0b8e87b" />
 
 
 ### 🔹 Gold Layer  
@@ -140,9 +147,10 @@ Business-ready:
 
 <img width="1790" height="762" alt="databricks_3" src="https://github.com/user-attachments/assets/90e06cb1-2aa6-4914-8dbc-dc91affeca81" />
 
+All Gold tables were written as optimized Parquet files and exposed to Azure Synapse through **Serverless SQL External Tables** for analytics and reporting.
+
 <img width="1547" height="863" alt="syanpse_3" src="https://github.com/user-attachments/assets/26a5c835-c0bf-4ffa-b7d9-c67bfd48f667" />
 
-All Gold tables were written as optimized Parquet files and exposed to Azure Synapse through **Serverless SQL External Tables** for analytics and reporting.
 
 ---
 
