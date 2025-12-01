@@ -95,6 +95,7 @@ This data includes customer info, product catalog, order headers, and order item
 # 📂 Data Lake Structure (Medallion Architecture)
 
 
+<img width="1476" height="727" alt="data_lake_1" src="https://github.com/user-attachments/assets/5cb077a8-9853-4aef-b59a-ae5affbef2ee" />
 
 
 
@@ -104,8 +105,8 @@ This data includes customer info, product catalog, order headers, and order item
 
 # 🧠 Data Modeling
 
-📌 **Replace with your diagram:**  
-`![Data Model](images/data_model.png)`
+<img width="1006" height="725" alt="data_modeling" src="https://github.com/user-attachments/assets/7dcc59a3-c253-474e-9ef4-83477c592b94" />
+
 
 The project uses a **Star Schema**:
 
@@ -124,17 +125,30 @@ The project uses a **Star Schema**:
 ### 🔹 Bronze Layer  
 Raw CSV files ingested from ADF.
 
+<img width="1455" height="635" alt="adf" src="https://github.com/user-attachments/assets/b0ceaccf-4db4-4646-97d5-76714568de22" />
+
+
+
 ### 🔹 Silver Layer  
 Cleaned + standardized:
 - Fixed data types  
 - Removed duplicates  
-- Derived fields  
+- Derived fields
+
+<img width="1802" height="783" alt="databricks_2" src="https://github.com/user-attachments/assets/84ee2981-ebc3-4075-a713-df1318ca0a61" />
+
 
 ### 🔹 Gold Layer  
 Business-ready:
 - Dimensional tables (customer, product, date)
 - Fact table (order-level sales metrics)
-- Loaded to Synapse for reporting  
+- Loaded to Synapse for reporting
+
+<img width="1790" height="762" alt="databricks_3" src="https://github.com/user-attachments/assets/90e06cb1-2aa6-4914-8dbc-dc91affeca81" />
+
+<img width="1547" height="863" alt="syanpse_3" src="https://github.com/user-attachments/assets/26a5c835-c0bf-4ffa-b7d9-c67bfd48f667" />
+
+
 
 Transformations performed using **PySpark notebooks in Azure Databricks**.
 
@@ -142,8 +156,8 @@ Transformations performed using **PySpark notebooks in Azure Databricks**.
 
 # 📈 Power BI Dashboard
 
-📌 Placeholder for your screenshot:  
-`![Power BI Dashboard](images/powerbi_dashboard.png)`
+<img width="1262" height="710" alt="report" src="https://github.com/user-attachments/assets/d908ad7c-d0a4-40a1-ba9b-44fe3646dbd8" />
+
 
 Dashboard includes:
 - Total revenue  
