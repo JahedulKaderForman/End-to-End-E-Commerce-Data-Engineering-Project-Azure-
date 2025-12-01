@@ -1,5 +1,6 @@
 # 📦 End-to-End E-Commerce Data Engineering Project (Azure)
-This project showcases my end-to-end cloud data engineering work using the Azure ecosystem. I built a complete data pipeline that simulates how an e-commerce business processes customer, product, and sales data to generate meaningful insights. The solution follows the  **Medallion Architecture (Bronze → Silver → Gold) ** and uses  **Azure Data Factory, Azure Databricks, Azure Synapse Serverless SQL, and Power BI ** to create a production-style analytics platform.
+This project showcases my end-to-end cloud data engineering work using the Azure ecosystem. I built a complete data pipeline that simulates how an e-commerce business processes customer, product, and sales data to generate meaningful insights. The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** and uses **Azure Data Factory**, **Azure Databricks**, **Azure Synapse Serverless SQL**, and **Power BI** to create a production-style analytics platform.
+
 
 ---
 
@@ -18,7 +19,8 @@ This project showcases my end-to-end cloud data engineering work using the Azure
 
 # 🧩 Project Overview
 
-The goal of this project is to build a **fully functional analytics ecosystem** for an e-commerce platform, covering:
+I designed this project to demonstrate how raw operational data can be ingested, transformed, modeled, and visualized using modern cloud tools.  
+The pipeline includes:
 
 - Data ingestion  
 - Cloud storage (Data Lake)  
@@ -27,7 +29,7 @@ The goal of this project is to build a **fully functional analytics ecosystem** 
 - Data warehousing in Synapse  
 - Visualization using Power BI  
 
-This project is designed to showcase **real-world data engineering skills** used in modern enterprises.
+All components work together to build a scalable e-commerce analytics solution.
 
 ---
 
@@ -62,7 +64,7 @@ Below is the high-level architecture of the solution:
 
 # 📊 Dataset
 
-The project uses a small simulated e-commerce dataset with:
+I used a small simulated e-commerce dataset containing:
 
 - **customers.csv**  
 - **products.csv**  
@@ -103,6 +105,17 @@ The project uses a **Star Schema**:
 
 # ⚙️ Transformation Pipeline
 
+Inside Databricks, I implemented:
+
+- Secure secret access using **Azure Key Vault** (service principal credentials, storage keys)
+- Data type cleaning and standardization  
+- Handling of duplicates and missing values  
+- Joining all datasets into unified tables  
+- Creating derived fields such as total price and discount metrics  
+- Generating a reusable date dimension  
+- Building the final star schema (dimensions + fact table)
+
+
 ### 🔹 Bronze Layer  
 Raw CSV files ingested from ADF.
 
@@ -129,28 +142,35 @@ Business-ready:
 
 <img width="1547" height="863" alt="syanpse_3" src="https://github.com/user-attachments/assets/26a5c835-c0bf-4ffa-b7d9-c67bfd48f667" />
 
-
-
-Transformations performed using **PySpark notebooks in Azure Databricks**.
+All Gold tables were written as optimized Parquet files and exposed to Azure Synapse through **Serverless SQL External Tables** for analytics and reporting.
 
 ---
 
 # 📈 Power BI Dashboard
 
+## ⭐ KPI Cards
+- Total Sales  
+- Total Orders  
+- Total Customers  
+- Average Order Value  
+
+### 📊 Visuals
+- Sales trend over time (line chart)  
+- Revenue by product category (column chart)  
+- Top-selling products (bar chart)  
+- Customer distribution by country (map/chart)  
+- Orders by order status (pie chart)  
+- Sales by month (donut chart)
+
+### 🎛 Slicers
+- Product category  
+- Country  
+
+
 <img width="1262" height="710" alt="report" src="https://github.com/user-attachments/assets/d908ad7c-d0a4-40a1-ba9b-44fe3646dbd8" />
 
 
-Dashboard includes:
-- Total revenue  
-- Monthly sales trend  
-- Sales by category  
-- Top-selling products  
-- Orders by country  
-- Customer insights  
 
----
-
-# 📁 Project Structure
 
 
 
