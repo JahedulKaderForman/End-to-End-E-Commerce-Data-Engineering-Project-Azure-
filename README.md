@@ -44,23 +44,7 @@ Below is the high-level architecture of the solution:
 
 ### Architecture Flow
 
-HTTP CSV Files
-   │
-   ▼
-Azure Data Factory (Ingestion & Scheduling)
-   │
-   ▼
-Azure Data Lake Gen2
-(Bronze → Silver → Gold)
-   │
-   ▼
-Azure Databricks (PySpark Transformations)
-   │
-   ▼
-Azure Synapse Analytics (Data Warehouse)
-   │
-   ▼
-Power BI (Dashboard & Analytics)
+<img width="931" height="367" alt="image" src="https://github.com/user-attachments/assets/bd279c7b-e0e1-468e-99df-fc507bc4f24b" />
 
 
 
