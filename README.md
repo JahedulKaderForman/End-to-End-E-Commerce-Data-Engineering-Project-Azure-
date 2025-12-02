@@ -1,7 +1,7 @@
 # 📦 End-to-End E-Commerce Data Engineering Project (Azure)
 This project showcases my end-to-end cloud data engineering work using the Azure ecosystem. I built a complete data pipeline that simulates how an e-commerce business processes customer, product, and sales data to generate meaningful insights. The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** and uses **Azure Data Factory**, **Azure Databricks**,**Azure Key Vault**, **Azure Synapse Serverless SQL**, and **Power BI** to create a production-style analytics platform.
 
-🎥 **YouTube Walkthrough:** 
+🎥 **YouTube Walkthrough:** https://www.youtube.com/watch?v=nuK7y4Kc5tg
 
 ---
 
