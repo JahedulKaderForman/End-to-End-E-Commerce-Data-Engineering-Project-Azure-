@@ -88,7 +88,7 @@ This data includes customer info, product catalog, order headers, and order item
 ---
 
 # 🧠 Data Modeling
-I designed the analytical model using a **Star Schema**, which includes three dimension tables—dim_customer, dim_product, and dim_date—and a single fact_order table .
+I designed the analytical model using a **Star Schema**, which includes three dimension tables dim_customer, dim_product, and dim_date and a single fact_order table .
 
 ### ⭐ Dimensions
 - `dim_customer`
